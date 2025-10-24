@@ -333,33 +333,31 @@ def main():
     # Define search space
     search_space = {
         'epochs': {
-            'type': 'int',
-            'low': 400,
-            'high': 1200,
+            'type': 'choice',
+            'choices': [400, 800, 1600],            
         },
         'batch_size': {
             'type': 'choice',
-            'choices': [2, 4, 8, 16],
+            'choices': [4, 8, 16, 32],
         },
         'lr': {
-            'type': 'log',
-            'low': 1e-4,
-            'high': 1e-2,
+            'type': 'choice',
+            'choices': [1e-4, 1e-3, 1e-2],
         },
         'latent_dim': {
             'type': 'choice',
             'choices': [2, 4, 8, 16],
         },
-        'sigma': {
-            'type': 'float',
-            'low': 4.0,
-            'high': 12.0,
-        },
-        'lambda_mmd': {
-            'type': 'log',
-            'low': 1e-5,
-            'high': 1e-3,
-        },
+        #'sigma': {
+        #    'type': 'float',
+        #    'low': 8.0,
+        #    'high': 12.0,
+        #},
+        #'lambda_mmd': {
+        #    'type': 'log',
+        #    'low': 1e-5,
+        #    'high': 1e-3,
+        #},
     }
     
     print("\nSearch space:")
